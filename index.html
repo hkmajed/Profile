@@ -1,312 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Hussein Majed</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Hussein Majed</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.jpeg" alt="Hussesin Majed profile picture" id="profile-pic"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Hussein Majed</h1>
-        <p class="section__text__p2">Software Developer</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/Resume.pdf')"> 
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-            onclick="location.href='https://www.linkedin.com/in/hussein-majed'"/>
-          <img src="./assets/github.png" alt="My Github profile" class="icon"
-            onclick="location.href='https://github.com/hkmajed'"/>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.jpeg"
-            alt="Profile picture"
-            id ="about-pic"/>
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"/>
-              <h3>Experience</h3>
-              <p>7+ years IT Specialist<br /> 2 Years Supply Planner</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"/>
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br/>M.BA. Masters Degree<br/>Diploma. Computer Programming</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-                Motivated and skilled software developer student with a background in both IT and business fields,seeking a co-op position in the computer programming field. 
-                Eager to leverage hands-on experience and academic knowledge to contribute effectively to software development projects and gain valuable industry experience.
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"/>
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Software Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/java.png" alt="java icon"  class="icon"/>
-                <div>
-                  <h3>JAVA</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/html.png" alt="html icon" class="icon"/>
-                <div>
-                  <h3>HTML</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/css.png"
-                  alt="css icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/javascript.png" alt="JS icon" class="icon"/>
-                <div>
-                  <h3>JavaScript</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/php.png" alt="php icon" class="icon"/>
-                <div>
-                  <h3>php</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/react.png" alt="react icon" class="icon"/>
-                <div>
-                  <h3>React JS</h3>
-                </div>
-              </article>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussein Majed | Software & Cloud Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">HM</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu-links">
+        <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <p class="hero-intro">Hi, my name is</p>
+        <h1 class="hero-name">Hussein Majed.</h1>
+        <h2 class="hero-role">Software & Cloud Engineer.</h2>
+        <p class="hero-desc">
+          I am a <strong>Software & Cloud Engineer</strong> dedicated to building resilient, scalable, and automated
+          infrastructure.
+          With a strong foundation in software development and IT operations, I bridge the gap between code and
+          deployment, ensuring seamless delivery pipelines and robust cloud environments.
+        </p>
+        <a href="#projects" class="cta-btn">View My Work</a>
+      </div>
+      <div class="hero-img-container">
+        <div class="tech-avatar-wrapper">
+          <div class="tech-ring"></div>
+          <img src="assets/Profile-Avatar.png" alt="Hussein Majed" class="tech-avatar">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal-section">
+    <div class="container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span style="margin-left: 10px; font-size: 0.8rem; color: #999;">visitor@hussein-portfolio: ~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="output-line">Welcome to Hussein's interactive portfolio v2.1.0</div>
+          <div class="output-line">Type <span class="highlight">'help'</span> to see available commands.</div>
+          <div class="command-line">
+            <span class="prompt">visitor@hussein-portfolio:~$</span>
+            <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-content">
+        <p>
+          My journey into technology began with a deep curiosity for how systems work, leading me to spend over 7 years
+          as an IT Specialist.
+          However, I realized that my true passion lay not just in maintaining systems, but in <strong>building and
+            automating</strong> them.
+        </p>
+        <p>
+          I transitioned into Software Development and quickly found my niche in <strong>DevOps and Cloud
+            Computing</strong>.
+          I love the challenge of orchestrating containers, defining infrastructure as code, and optimizing CI/CD
+          pipelines.
+          I am now seeking a role where I can leverage my hybrid background in Operations and Development to solve
+          complex infrastructure challenges.
+        </p>
+        <br>
+        <h3>Technical Arsenal:</h3>
+
+        <div class="skills-grid" style="margin-top: 20px;">
+          <div class="skill-category">
+            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+            <div class="skill-list">
+              <div class="skill-item"><i class="fab fa-aws"></i> <span>AWS</span></div>
+              <div class="skill-item"><i class="fab fa-docker"></i> <span>Docker</span></div>
+              <div class="skill-item"><i class="fas fa-dharmachakra"></i> <span>Kubernetes</span></div>
+              <div class="skill-item"><i class="fas fa-code-branch"></i> <span>Terraform</span></div>
+              <div class="skill-item"><i class="fas fa-infinity"></i> <span>CI/CD</span></div>
+              <div class="skill-item"><i class="fab fa-linux"></i> <span>Linux</span></div>
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Database Management Systems</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/sql.png" alt="sql icon" class="icon"/>
-                <div>
-                  <h3>SQL Server</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/postgre.png" alt="Postgre icon" class="icon"/>
-                <div>
-                  <h3>Postgre SQL</h3>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/oracle.png" alt="Oracle icon" class="icon"/>
-                <div>
-                  <h3>Oracle DB</h3>
-                </div>
-              </article>
-            <article>
-              <img src="./assets/mongo.png" alt="Mongo icon" class="icon"/>
-                <div>
-                  <h3>Mongo DB</h3>
-                </div>
-              </article>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Development</h3>
+            <div class="skill-list">
+              <div class="skill-item"><i class="fab fa-java"></i> <span>Java</span></div>
+              <div class="skill-item"><i class="fab fa-python"></i> <span>Python</span></div>
+              <div class="skill-item"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+              <div class="skill-item"><i class="fab fa-react"></i> <span>React</span></div>
+              <div class="skill-item"><i class="fas fa-database"></i> <span>SQL</span></div>
+              <div class="skill-item"><i class="fab fa-git-alt"></i> <span>Git</span></div>
             </div>
           </div>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/kronokat.JPG"
-                alt="kronokat project"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Task Management System</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/andreavisani/KronoKat.git'">
-                Github
-              </button>
-              <!-- <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hkmajed'">
-                Live Demo
-              </button> -->
-            </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="container">
+      <div class="section-title">
+        <h2>Certifications</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-certificate"></i> Professional Certs</h3>
+          <div class="skill-list">
+            <span class="skill-tag">AWS Certified Solutions Architect - Associate </span>
+            <span class="skill-tag">AWS Certified Developer - Associate (In Progress)</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/weaherApp.JPG" alt="weatherApp" class="project-img"/>
-            </div>
-            <h2 class="experience-sub-title project-title">Weather Application</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" 
-              onclick="location.href='https://github.com/hkmajed/Weather-App.git'"> Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://hkmajed.github.io/Weather-App/'"> Live Demo
-              </button>
-            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2>Work Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Software Developer</h3>
+            <span class="company">Nokia</span>
+            <span class="date">2024 - Present</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/Profile.JPG"
-                alt="Profile project"
-                class="project-img"/>
-            </div>
-            <h2 class="experience-sub-title project-title">Profile</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://hkmajed.github.io/Profile/'">
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hkmajed'">
-                Live Demo
-              </button>
-            </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>IT Specialist</h3>
+            <span class="company">AZADEA Group</span>
+            <span class="date">2013 - 2022</span>
           </div>
-          <!-- <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/NGG.PNG" alt="Project 3" class="project-img"/>
-            </div>
-            <h2 class="experience-sub-title project-title">Number Guessing Game</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/hkmajed/Number-Guessing-Game.git'">Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://hkmajed.github.io/Number-Guessing-Game/'">Live Demo
-              </button>
-            </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Network Engineer</h3>
+            <span class="company">Orange Business Services</span>
+            <span class="date">2011 - 2013</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="projects-grid"> <!-- Reusing grid layout for education cards -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-graduation-cap folder-icon"></i>
+          </div>
+          <h3> Diploma in Computer Programming</h3>
+          <div class="institution">Algonquin College</div>
+          <p>Focused on Software Development, Data Structures, and Algorithms.</p>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-university folder-icon"></i>
+          </div>
+          <h3>Masters of Business Admininistration</h3>
+          <div class="institution">Lebanese International University</div>
+          <p>Specialized in Management information systems.</p>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-scroll folder-icon"></i>
+          </div>
+          <h3>Bachelor in Information Technology</h3>
+          <div class="institution">Arab Open University</div>
+          <p>Focused on Network Engineering, IT Infrastructure, and Security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="far fa-folder folder-icon"></i>
+            <!-- <div class="project-links">
+              <a href="https://github.com/andreavisani/KronoKat.git" target="_blank"><i class="fab fa-github"></i></a>
+            </div> -->
+          </div>
+          <h3>Coming Soon...</h3>
+          <!-- <p>A robust task tracking application designed for agile teams. Features include real-time updates, user
+            authentication, and drag-and-drop task organization.</p> -->
+          <!-- <div class="project-tech-list">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>MySQL</span>
+            <span>React</span>
           </div> -->
         </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="far fa-folder folder-icon"></i>
+            <!-- <div class="project-links">
+              <a href="https://github.com/hkmajed/Weather-App.git" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://hkmajed.github.io/Weather-App/" target="_blank"><i
+                  class="fas fa-external-link-alt"></i></a>
+            </div> -->
+          </div>
+          <h3>Coming Soon...</h3>
+          <!-- <p>A responsive weather dashboard fetching real-time data from the OpenWeatherMap API. Implements dynamic DOM
+            manipulation and error handling.</p>
+          <div class="project-tech-list">
+            <span>JavaScript</span>
+            <span>API Integration</span>
+            <span>CSS3</span>
+          </div> -->
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="far fa-folder folder-icon"></i>
+            <!-- <div class="project-links">
+              <a href="https://github.com/hkmajed/Profile" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://hkmajed.github.io/Profile/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            </div> -->
+          </div>
+          <h3>Coming Soon...</h3>
+          <!-- <p>My initial portfolio site. A great learning experience in fundamental web technologies and responsive
+            design principles.</p>
+          <div class="project-tech-list">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+          </div> -->
+        </div>
+
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/mailto.png"
-            alt="mail icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:hkmajed@hotmail.com">hkmajed@hotmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin-col.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/hussein-majed/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Hussein Majed 2024</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <p class="highlight">Contact</p>
+      <h2>Get In Touch</h2>
+      <p>
+        I am actively seeking opportunities in <strong>Cloud Engineering</strong> and <strong>DevOps</strong>.
+        If you have a challenging project or a role that needs a problem-solver, let's connect!
+      </p>
+      <a href="mailto:hkmajed@hotmail.com" class="cta-btn">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by Hussein Majed</p>
+    <div style="margin-top: 10px;">
+      <a href="https://github.com/hkmajed" target="_blank" style="margin: 0 10px;"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/hussein-majed/" target="_blank" style="margin: 0 10px;"><i
+          class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
