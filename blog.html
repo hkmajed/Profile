@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post | Hussein Majed</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Marked.js for parsing markdown to HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Add some specific styles for blog content */
+    #blog-content {
+      padding: 120px 20px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      min-height: 80vh;
+    }
+    
+    .markdown-body {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .markdown-body h1 {
+      color: var(--white);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-family: var(--font-mono);
+    }
+    
+    .markdown-body h2, .markdown-body h3 {
+      color: var(--white);
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-family: var(--font-mono);
+    }
+    
+    .markdown-body p {
+      margin-bottom: 20px;
+    }
+    
+    .markdown-body a {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+    
+    .markdown-body a:hover {
+      color: var(--accent-hover);
+    }
+    
+    .markdown-body code {
+      background: var(--bg-light);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      color: var(--accent-color);
+    }
+    
+    .markdown-body pre {
+      background: var(--bg-light);
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+    
+    .markdown-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-primary);
+    }
+    
+    .markdown-body ul, .markdown-body ol {
+      margin-bottom: 20px;
+      padding-left: 30px;
+    }
+    
+    .markdown-body li {
+      margin-bottom: 10px;
+    }
+    
+    .markdown-body blockquote {
+      border-left: 4px solid var(--accent-color);
+      padding-left: 20px;
+      margin: 20px 0;
+      color: var(--text-primary);
+      font-style: italic;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-color);
+      font-family: var(--font-mono);
+      margin-bottom: 30px;
+      transition: var(--transition);
+    }
+    
+    .back-btn:hover {
+      transform: translateX(-5px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <div class="logo">HM</div>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#blogs">Blogs</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu-links">
+        <li><a href="index.html#hero" onclick="toggleMenu()">Home</a></li>
+        <li><a href="index.html#blogs" onclick="toggleMenu()">Blogs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Blog Content Section -->
+  <section id="blog-content">
+    <a href="index.html#blogs" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+    
+    <div id="loading" style="text-align: center; color: var(--text-secondary); padding: 50px 0;">
+      <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+      <p>Loading article...</p>
+    </div>
+    
+    <div id="error" style="display: none; text-align: center; color: #ff5f56; padding: 50px 0;">
+      <h2>Article Not Found</h2>
+      <p>Sorry, the article you are looking for does not exist or has been removed.</p>
+    </div>
+    
+    <div id="article-body" class="markdown-body" style="display: none;"></div>
+  </section>
+
+  <footer>
+    <p>Designed & Built by Hussein Majed</p>
+    <div style="margin-top: 10px;">
+      <a href="https://github.com/hkmajed" target="_blank" style="margin: 0 10px;"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/hussein-majed/" target="_blank" style="margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get the 'id' parameter from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id');
+      
+      const loadingDiv = document.getElementById('loading');
+      const errorDiv = document.getElementById('error');
+      const articleBody = document.getElementById('article-body');
+      
+      if (!articleId) {
+        loadingDiv.style.display = 'none';
+        errorDiv.style.display = 'block';
+        return;
+      }
+      
+      // Fetch the markdown article dynamically
+      fetch(`blogs/${articleId}.md`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(markdown => {
+          // Use marked library to parse markdown and set to html
+          articleBody.innerHTML = marked.parse(markdown);
+          loadingDiv.style.display = 'none';
+          articleBody.style.display = 'block';
+          
+          // Optionally dynamically set the page title by looking at the first h1
+          const h1 = articleBody.querySelector('h1');
+          if (h1) {
+            document.title = h1.textContent + " | Hussein Majed";
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching markdown:', error);
+          loadingDiv.style.display = 'none';
+          errorDiv.style.display = 'block';
+        });
+    });
+  </script>
+</body>
+</html>

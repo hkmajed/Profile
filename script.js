@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cmdInput = document.getElementById('cmd-input');
 
     const commands = {
-        'help': 'Available commands: about, skills, experience, projects, contact, clear, whoami',
+        'help': 'Available commands: about, skills, experience, projects, blogs, contact, clear, whoami',
         'about': 'I am a Software Developer transitioning into Cloud & DevOps. I love automating things!',
         'skills': 'Cloud: AWS, Docker, K8s, Terraform | Dev: Java, Python, JS, React, SQL',
         'experience': 'IT Specialist (7 yrs) -> Supply Planner (2 yrs) -> Aspiring Cloud Engineer',
         'projects': 'Check out my Task Management System and Weather App in the Projects section!',
+        'blogs': 'Read my latest articles about cloud technologies and DevOps in the Blogs section.',
         'contact': 'Email: hkmajed@hotmail.com | LinkedIn: /in/hussein-majed',
         'whoami': 'visitor@hussein-portfolio',
         'sudo': 'Permission denied: You are not in the sudoers file. This incident will be reported.'
@@ -132,6 +133,46 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('hidden');
         observer.observe(el);
     });
+
+    // --- DYNAMIC BLOG LOADING ---
+    const blogsGrid = document.getElementById('blogs-grid');
+    if (blogsGrid) {
+        fetch('blogs.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach((blog, index) => {
+                    // Create card element
+                    const card = document.createElement('a');
+                    card.href = 'blog.html?id=' + blog.id;
+                    card.className = 'project-card hidden delay-' + ((index % 3 + 1) * 100);
+                    
+                    // Build tags HTML
+                    const tagsHtml = blog.tags.map(tag => `<span>${tag}</span>`).join('');
+                    
+                    card.innerHTML = `
+                        <div class="project-top">
+                            <i class="fas fa-book-open folder-icon"></i>
+                            <div class="project-links">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <h3>${blog.title}</h3>
+                        <p>${blog.description}</p>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 20px; font-style: italic;">
+                            Published on ${blog.date}
+                        </div>
+                        <div class="project-tech-list" style="margin-top: auto;">
+                            ${tagsHtml}
+                        </div>
+                    `;
+                    
+                    blogsGrid.appendChild(card);
+                    // Add a tiny timeout to ensure CSS registers the .hidden class before observing
+                    setTimeout(() => observer.observe(card), 10);
+                });
+            })
+            .catch(error => console.error('Error loading blogs:', error));
+    }
 });
 
 function toggleMenu() {
